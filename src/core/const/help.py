@@ -1,0 +1,1 @@
+TYPE_HELP = 'Este parámetro hace referencia a que tipo de archivo quiere de como salida (csv, sql)'
