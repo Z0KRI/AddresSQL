@@ -49,16 +49,12 @@ class Core:
 
         for item in genFile.data:
             if args.type == 'sql':
-                if args.engine == 'postgres':
-                    genFile.sql(table=item['file_name'], fields=item['fields'], values=item['data'], output=args.output, engine=args.engine)
-                elif args.engine == 'mysql':
-                    print(item['file_name'])
+                genFile.sql(table=item['file_name'], fields=item['fields'], values=item['data'], output=args.output, engine=args.engine)
             else:
                 genFile.csv(table=item['file_name'], fields=item['fields'], values=item['data'], output=args.output)
 
     
     def __init__(self, args):
-        print(args)
         files = self.__getFiles(args.path)
         data = self.__get_data(files)
         self.export_data(data, args)
