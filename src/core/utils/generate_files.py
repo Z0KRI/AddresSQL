@@ -47,10 +47,10 @@ class GenerateFile:
     @staticmethod
     def csv(table, fields, values, output):
         with open(rf"{output}\{table}.csv", 'w', encoding='utf-8') as file:
-            file.write(', '.join(f'{column}' for column in fields) + '\n')
+            file.write(','.join(f'{column}' for column in fields) + '\n')
             for item in values:
                 file.write(
-                    ', '.join(f'{value}' for value in item)
+                    ','.join(f'{value}' for value in item)
                     + '\n'
                 )
 
